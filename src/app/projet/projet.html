@@ -1,0 +1,18 @@
+<div class="project-item">
+    <div class="container">
+        <div class="project-info">
+            <h3>{{ projetItems.title }}</h3>
+            <p>{{ projetItems.description }}</p>
+            <span class="project-tech">{{ projetItems.langage}}</span>
+        </div>
+        <div class="project-arrow" (click)="onMore($event)">→ voir plus</div>
+    </div>
+    <div class="project-img">
+        <img [src]="projetItems.projetImg[0]" alt="">
+    </div>
+    <div class="project-img-more none">
+        @for(i of projetItems.projetImg; track i){
+            <img [src]="i" alt="">
+        }
+    </div>
+</div>
