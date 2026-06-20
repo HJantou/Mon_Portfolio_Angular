@@ -13,15 +13,17 @@ export class Projet {
 
 
   onMore(event : Event) : void{
-    let btn_more = event.target as HTMLElement
+    let btn_more = event.target as HTMLButtonElement
     if(!this.more){
       btn_more!.textContent = "→ voir moins"
+      this.more = true
     }
     else{
       btn_more!.textContent = "→ voir plus"
+      this.more = false
     }
 
-    let more_img = document.querySelector(".project-item")
-    more_img!.classList.toggle("more")
+    let divParent = btn_more.closest(".project-item") as HTMLDivElement
+    divParent.classList.toggle("more")    
   }
 }

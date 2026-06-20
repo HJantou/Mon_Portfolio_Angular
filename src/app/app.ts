@@ -5,6 +5,7 @@ import { Skills } from './skills/skills'
 import { SkillsItems } from './skills/modele/skill-item'
 import { Projet } from './projet/projet';
 import { ProjetItems } from './projet/modele/projet-item';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import { ProjetItems } from './projet/modele/projet-item';
     Navbar,
     Profil,
     Skills,
-    Projet
+    Projet,
+    Footer
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
@@ -31,6 +33,7 @@ export class App implements OnInit{
     this.projetList = [
       new ProjetItems ("Système PV Étudiants", "Automatisation du calcul des moyennes et génération de procès-verbaux académiques.","Java, SQL",["dashboard.png","gestion_compte1.png"]),
       new ProjetItems ("Site Portfolio", "Création d'un site portfolio pour présenter mes compétences et projets personnels.","Angular, TypeScript, HTML, CSS",["portfolio.png","portfolio2.png"]),
+      new ProjetItems ("Site vitrine - Thenella", "Site vitrine présentant une artiste gospel camerounaise, sa biographie, ses sorties youtube et ses évènements.", "HTML, CSS, JS",["thenella.png"]),
     ]
   }
 
