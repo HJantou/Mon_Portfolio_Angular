@@ -10,9 +10,16 @@
     <div class="project-img">
         <img [src]="projetItems.projetImg[0]" alt="">
     </div>
-    <div class="project-img-more none">
+    <div class="project-img-more">
         @for(i of projetItems.projetImg; track i){
-            <img [src]="i" alt="">
+            <img [src]="i" alt="" (click)="ouvrirLecteur(i)">
         }
+    </div>
+    <div class="lecteur-overlay" *ngIf="imageSelectionnee" (click)="fermerLecteur()">
+        <!-- Bouton pour fermer -->
+        <span class="bouton-fermer">&times;</span>
+  
+        <!-- L'image agrandie (Le click stopPropagation évite que fermerLecteur se déclenche si on clique sur l'image elle-même) -->
+        <img [src]="imageSelectionnee" class="image-agrandie" (click)="$event.stopPropagation()">
     </div>
 </div>

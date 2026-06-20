@@ -73,8 +73,45 @@
         gap: 10px;
         img{
             width: 100%;
-        }
-
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            &:hover {
+                transform: scale(1.03); // Petit effet visuel au survol
+            }
+        };
+    }
+    .lecteur-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.85); // Noir transparent
+        z-index: 9999; // Au-dessus de tout le reste
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.3s ease;
+    };
+    .image-agrandie {
+        max-width: 90%;
+        max-height: 85%;
+        border-radius: 4px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        object-fit: contain;
+    };
+    .bouton-fermer {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    };
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
 }
 

@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { ProjetItems } from './modele/projet-item';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-projet',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './projet.html',
   styleUrl: './projet.scss',
 })
@@ -25,5 +26,16 @@ export class Projet {
 
     let divParent = btn_more.closest(".project-item") as HTMLDivElement
     divParent.classList.toggle("more")    
+  }
+
+  // Stocke l'URL de l'image actuellement agrandie (null si fermé)
+  imageSelectionnee: string | null = null;
+
+  ouvrirLecteur(urlImage: string) {
+    this.imageSelectionnee = urlImage;
+  }
+
+  fermerLecteur() {
+    this.imageSelectionnee = null;
   }
 }
