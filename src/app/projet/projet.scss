@@ -120,3 +120,14 @@
     width: 500px;
 }
 
+@media (max-width: 768px) {
+    .project-info h3 { font-size: 1.4rem; };
+    .project-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .project-img img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
